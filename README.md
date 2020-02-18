@@ -2,9 +2,10 @@
 
 ![Oscar](https://github.com/mariaversin/movies-pipelines/blob/master/oscar.jpg)
 
-**Goal --> Starting from a dataset, perform web scraping to enrich it with new information
+**Goal**--> Starting from a dataset, perform web scraping to enrich it with new information
 
-## How? With pipelines
+## How? 
+- With pipelines
 
 ## Structure of this project:
 
