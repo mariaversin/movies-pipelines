@@ -38,7 +38,6 @@ def main():
     # Pipeline
     print(sys.argv)
 
-    # PASO 1 - Recibir flags y estandarizarlos en un dict
     config = recibeConfig()
     year = config.year
     genre =config.genre
