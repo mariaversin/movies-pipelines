@@ -4,9 +4,9 @@
 
 **Goal --> Starting from a dataset, perform web scraping to enrich it with new information
 
-##How? With pipelines
+## How? With pipelines
 
-##Structure of this project:
+## Structure of this project:
 
 - main.py: It is where everything starts and also where everything ends.
 
