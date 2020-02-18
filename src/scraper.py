@@ -1,4 +1,7 @@
 import pandas as pd
+import PDF
+
+
 def cleaning_oscar(oscar):
     oscar = oscar.drop(columns=['ratings'], axis=1)
     return oscar
@@ -10,4 +13,7 @@ def oscars_per_year(oscar_clean,year):
     for title in oscar['title'].values:
         print(title)
     return oscar
+
+
+
    

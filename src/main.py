@@ -22,7 +22,7 @@ def recibeConfig():
     
     parser.add_argument('--year',
                         help='Año de estreno, desde 1960 hasta el 2017.',
-                        default="1995"
+                        default="1997"
                         )
     parser.add_argument('--genre',
                             help='A qué genero pertenece la película, por favor, sea específico',
@@ -45,21 +45,22 @@ def main():
     print(year)
     print(genre)
     data1, data2 =importDataSet() # data
-    #print("PELICULAS:" ) 
-    #print(data1.shape)
-    #print("OSCAR:" )
-    #print(data2.title[100])
-    print('\n --------------------*****---------------------\n')
+  
+  
+    print('\n ************************************************\n')
+    # Cleaning data
     data_clean = clean.cleaning(data1) 
     lista_movies=clean.movies_per_year(data_clean,year,genre)
-    #print(lista_movies)
+ 
     
     print('\n-----------------------------\n')
     print('\n-----------------------------\n')
-    
+    # Data from Imdb page web scraping 
     oscar_clean = scraper.cleaning_oscar(data2) 
     lista_movies_oscar= scraper.oscars_per_year(oscar_clean,year)
     oscar = clean.compare_df(lista_movies,lista_movies_oscar)
+    print(oscar)
+    
     
 
 def importDataSet():
