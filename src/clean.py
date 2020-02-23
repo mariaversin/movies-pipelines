@@ -45,7 +45,7 @@ def movies_per_year(data_clean,year,genre):
     
     return data
 
-def compare_df(data,oscar):
+def compare_df(data,oscar,wiki):
 
     '''Compare 2 dataframes, one from IMDb 
         and the other from web scraping '''
@@ -53,8 +53,11 @@ def compare_df(data,oscar):
     for peli in data['title']:
         for premio in oscar['title']:
             if peli == premio:
-                return "\n\n The movie -{}- won an oscar!!!\n\n".format(peli)
-   
+                return ( "\n\n The movie -{}- won an oscar!!!\n\n".format(peli))
+            for col,row in wiki.iteritems():
+                if col == 'Title':
+                    if row == peli:
+                        return ('\n\n Plot of this movie: *')
 
 
 def titleGenre(data_clean):

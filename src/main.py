@@ -43,7 +43,7 @@ def main():
     genre =config.genre
     print(year)
     print(genre)
-    data1, data2 =importDataSet() # data
+    data1, data2, wiki=importDataSet() # data
   
   
     print('\n ************************************************\n')
@@ -57,15 +57,17 @@ def main():
     # Data from Imdb page web scraping 
     oscar_clean = scraper.cleaning_oscar(data2) 
     lista_movies_oscar= scraper.oscars_per_year(oscar_clean,year)
-    oscar = clean.compare_df(lista_movies,lista_movies_oscar)
+    oscar = clean.compare_df(lista_movies,lista_movies_oscar,wiki)
     print(oscar)
+    
     
     
 
 def importDataSet():
     data_films = pd.read_csv('../output/peliculas.csv')
+    pelis_wiki = pd.read_csv('../input/movies/movies.csv')
     data_oscar = pd.read_csv('../output/oscar.csv')
-    return data_films, data_oscar
+    return data_films, data_oscar, pelis_wiki
 
 if __name__ == "__main__":
     main()
